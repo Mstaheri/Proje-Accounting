@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADC33588-1399-4C8E-B417-BC2F0C728558}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Mstaheri__</RootNamespace>
+    <AssemblyName>Mstaheri++</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DateTimeSelector, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DateTimeSelector 1.1.2\DateTimeSelector.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2022.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Stimulsoft Designer 2022.1.1\Libs\Reports.Net\.NETFramework4.5.2\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2022.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Stimulsoft Designer 2022.1.1\Libs\Reports.Net\.NETFramework4.5.2\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win, Version=2022.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Stimulsoft Designer 2022.1.1\Libs\Reports.Net\.NETFramework4.5.2\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Access.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Access.Designer.cs">
+      <DependentUpon>Access.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chat.Designer.cs">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddAsnadePardakhti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddAsnadePardakhti.Designer.cs">
+      <DependentUpon>frmAddAsnadePardakhti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddHazineHoghogh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddHazineHoghogh.Designer.cs">
+      <DependentUpon>frmAddHazineHoghogh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddHesabHa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddHesabHa.Designer.cs">
+      <DependentUpon>frmAddHesabHa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddHesab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddHesab.Designer.cs">
+      <DependentUpon>frmAddHesab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSenadHa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSenadHa.Designer.cs">
+      <DependentUpon>frmAddSenadHa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshHazineEdari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshHazineEdari.Designer.cs">
+      <DependentUpon>NamayeshHazineEdari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CEO.Designer.cs">
+      <DependentUpon>CEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddAsnadeDaryafti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddAsnadeDaryafti.Designer.cs">
+      <DependentUpon>frmAddAsnadeDaryafti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddKala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddKala.Designer.cs">
+      <DependentUpon>frmAddKala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEditEmployee.Designer.cs">
+      <DependentUpon>frmAddEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddHazineEdari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddHazineEdari.Designer.cs">
+      <DependentUpon>frmAddHazineEdari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddMali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddMali.Designer.cs">
+      <DependentUpon>frmAddMali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPardakhtAzHesab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPardakhtAzHesab.Designer.cs">
+      <DependentUpon>frmAddPardakhtAzHesab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddVarizBeHesab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddVarizBeHesab.Designer.cs">
+      <DependentUpon>frmAddVarizBeHesab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hesabdar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hesabdar.Designer.cs">
+      <DependentUpon>Hesabdar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTxtAndPic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyTxtAndPic.Designer.cs">
+      <DependentUpon>MyTxtAndPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshAsnadePardakhti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshAsnadePardakhti.Designer.cs">
+      <DependentUpon>NamayeshAsnadePardakhti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshAsnaeDaryafti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshAsnaeDaryafti.Designer.cs">
+      <DependentUpon>NamayeshAsnaeDaryafti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshHazineHoghogh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshHazineHoghogh.Designer.cs">
+      <DependentUpon>NamayeshHazineHoghogh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshHesabKol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshHesabKol.Designer.cs">
+      <DependentUpon>NamayeshHesabKol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshHesabMali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshHesabMali.Designer.cs">
+      <DependentUpon>NamayeshHesabMali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshHesabMoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshHesabMoin.Designer.cs">
+      <DependentUpon>NamayeshHesabMoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshHesabTafsili.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshHesabTafsili.Designer.cs">
+      <DependentUpon>NamayeshHesabTafsili.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshPardakhtAzHesab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshPardakhtAzHesab.Designer.cs">
+      <DependentUpon>NamayeshPardakhtAzHesab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshSenad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshSenad.Designer.cs">
+      <DependentUpon>NamayeshSenad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NamayeshVarizBeHesab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshVarizBeHesab.Designer.cs">
+      <DependentUpon>NamayeshVarizBeHesab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StiReportHelper.cs" />
+    <Compile Include="NamayeshKala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NamayeshKala.Designer.cs">
+      <DependentUpon>NamayeshKala.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Access.resx">
+      <DependentUpon>Access.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat.resx">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddAsnadePardakhti.resx">
+      <DependentUpon>frmAddAsnadePardakhti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddHazineHoghogh.resx">
+      <DependentUpon>frmAddHazineHoghogh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddHesabHa.resx">
+      <DependentUpon>frmAddHesabHa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddHesab.resx">
+      <DependentUpon>frmAddHesab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSenadHa.resx">
+      <DependentUpon>frmAddSenadHa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshHazineEdari.resx">
+      <DependentUpon>NamayeshHazineEdari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CEO.resx">
+      <DependentUpon>CEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddAsnadeDaryafti.resx">
+      <DependentUpon>frmAddAsnadeDaryafti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddKala.resx">
+      <DependentUpon>frmAddKala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEditEmployee.resx">
+      <DependentUpon>frmAddEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddHazineEdari.resx">
+      <DependentUpon>frmAddHazineEdari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddMali.resx">
+      <DependentUpon>frmAddMali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPardakhtAzHesab.resx">
+      <DependentUpon>frmAddPardakhtAzHesab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddVarizBeHesab.resx">
+      <DependentUpon>frmAddVarizBeHesab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hesabdar.resx">
+      <DependentUpon>Hesabdar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTxtAndPic.resx">
+      <DependentUpon>MyTxtAndPic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshAsnadePardakhti.resx">
+      <DependentUpon>NamayeshAsnadePardakhti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshAsnaeDaryafti.resx">
+      <DependentUpon>NamayeshAsnaeDaryafti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshHazineHoghogh.resx">
+      <DependentUpon>NamayeshHazineHoghogh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshHesabKol.resx">
+      <DependentUpon>NamayeshHesabKol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshHesabMali.resx">
+      <DependentUpon>NamayeshHesabMali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshHesabMoin.resx">
+      <DependentUpon>NamayeshHesabMoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshHesabTafsili.resx">
+      <DependentUpon>NamayeshHesabTafsili.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshPardakhtAzHesab.resx">
+      <DependentUpon>NamayeshPardakhtAzHesab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshSenad.resx">
+      <DependentUpon>NamayeshSenad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshVarizBeHesab.resx">
+      <DependentUpon>NamayeshVarizBeHesab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NamayeshKala.resx">
+      <DependentUpon>NamayeshKala.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qr code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarpetCompanyBLL\CarpetCompanyBLL.csproj">
+      <Project>{07be5a2f-c48b-456f-aaa2-57bd614f8139}</Project>
+      <Name>CarpetCompanyBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarpetCompanyDAL\CarpetCompanyDAL.csproj">
+      <Project>{55b963a3-dc2b-42a0-a252-a1c1a3df431b}</Project>
+      <Name>CarpetCompanyDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13990714P65657q981.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fvtimng9710-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nody-لوگوی-حسابداری-1628451631.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\موسسه-حسابداری-شرکت-حسابرسی.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\نرم-افزار-حسابداری.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\صورت-های-مالی-تلفیقی.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transfer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Taxes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Atm Machine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Balance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Insurance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Budget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-icons-plus-sign-clip-art-png-favpng-KnpCMikqSV8bEtXM3w5PaEBJw_t.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-sign-icon-positive-symbol-plus-sign-icon-positive-symbol-zoom-blurred-gradient-design-element-vivid-graphic-flat-icon-117088500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gold Ingot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Briefcase.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

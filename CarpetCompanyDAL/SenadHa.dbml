@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CarpetCompany" Class="SenadHaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=CarpetCompany;User ID=sa" SettingsObjectName="CarpetCompanyDAL.Properties.Settings" SettingsPropertyName="CarpetCompanyConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HesabKol" Member="HesabKols">
+    <Type Name="HesabKol">
+      <Column Name="CodeKol" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OnvanKol" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="HesabKol_HesabMoin" Member="HesabMoins" ThisKey="CodeKol" OtherKey="CodeKol" Type="HesabMoin" />
+      <Association Name="HesabKol_Senad" Member="Senads" ThisKey="CodeKol" OtherKey="CodeKol" Type="Senad" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HesabMoin" Member="HesabMoins">
+    <Type Name="HesabMoin">
+      <Column Name="CodeMoin" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OnvanMoin" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CodeKol" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="HesabMoin_HesabTafsili" Member="HesabTafsilis" ThisKey="CodeMoin" OtherKey="CodeMoin" Type="HesabTafsili" />
+      <Association Name="HesabKol_HesabMoin" Member="HesabKol" ThisKey="CodeKol" OtherKey="CodeKol" Type="HesabKol" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HesabTafsili" Member="HesabTafsilis">
+    <Type Name="HesabTafsili">
+      <Column Name="CodeTafsili" Type="System.String" DbType="VarChar(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OnvanTafsili" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CodeMoin" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="HesabMoin_HesabTafsili" Member="HesabMoin" ThisKey="CodeMoin" OtherKey="CodeMoin" Type="HesabMoin" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Senad" Member="Senads">
+    <Type Name="Senad">
+      <Column Name="ShomareSenad" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodeKol" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodeMoein" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CodeTafsili" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="NamHesab" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="SharheSenad" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TarikhSenad" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Bedehkar" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="Bestankar" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Association Name="HesabKol_Senad" Member="HesabKol" ThisKey="CodeKol" OtherKey="CodeKol" Type="HesabKol" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

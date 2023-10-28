@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CarpetCompany" Class="MaliDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=CarpetCompany;Integrated Security=True" SettingsObjectName="CarpetCompanyDAL.Properties.Settings" SettingsPropertyName="CarpetCompanyConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HesabMali" Member="HesabMalis">
+    <Type Name="HesabMali">
+      <Column Name="ShomareHesab" Type="System.String" DbType="VarChar(19) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SahebHesab" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NamHesab" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NamBank" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Tozihat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mojodi" Type="System.Decimal" DbType="Decimal(30,0) NOT NULL" CanBeNull="false" />
+      <Association Name="HesabMali_AsnadeDaryafti" Member="AsnadeDaryaftis" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="AsnadeDaryafti" />
+      <Association Name="HesabMali_AsnadePardakhti" Member="AsnadePardakhtis" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="AsnadePardakhti" />
+      <Association Name="HesabMali_PardakhtAzHesab" Member="PardakhtAzHesabs" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="PardakhtAzHesab" />
+      <Association Name="HesabMali_VarizBeHesab" Member="VarizBeHesabs" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="VarizBeHesab" />
+      <Association Name="HesabMali_Hoghogh" Member="Hoghoghs" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="Hoghogh" />
+      <Association Name="HesabMali_HazineEdari" Member="HazineEdaris" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="HazineEdari" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AsnadeDaryafti" Member="AsnadeDaryaftis">
+    <Type Name="AsnadeDaryafti">
+      <Column Name="CodeSenad" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShomareHesab" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="NamHesab" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DaryaftAz" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ShomareSenad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TarikhSabt" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TarikhSarResid" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(23,0)" CanBeNull="true" />
+      <Column Name="Tozihat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vaziat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HesabMali_AsnadeDaryafti" Member="HesabMali" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="HesabMali" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AsnadePardakhti" Member="AsnadePardakhtis">
+    <Type Name="AsnadePardakhti">
+      <Column Name="CodeSenad" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShomareHesab" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="NamHesab" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PardakhteBe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ShomareSenad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TarikhSabt" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TarikhSarResid" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(23,0)" CanBeNull="true" />
+      <Column Name="Tozihat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vaziat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HesabMali_AsnadePardakhti" Member="HesabMali" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="HesabMali" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PardakhtAzHesab" Member="PardakhtAzHesabs">
+    <Type Name="PardakhtAzHesab">
+      <Column Name="CodePardakhti" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShomareHesab" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="NamHesab" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NamPardakhtKonande" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TarikhPardakht" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(23,0)" CanBeNull="true" />
+      <Column Name="Tozihat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="HesabMali_PardakhtAzHesab" Member="HesabMali" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="HesabMali" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VarizBeHesab" Member="VarizBeHesabs">
+    <Type Name="VarizBeHesab">
+      <Column Name="CodeVariz" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShomareHesab" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="NamHesab" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NamVarizKonande" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TarikhVarizi" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(23,0)" CanBeNull="true" />
+      <Column Name="Tozihat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="HesabMali_VarizBeHesab" Member="HesabMali" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="HesabMali" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hoghogh" Member="Hoghoghs">
+    <Type Name="Hoghogh">
+      <Column Name="CodeHoghogh" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShomareHesab" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="Nam" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Tarikh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NoaHoghogh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Tozihat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="HesabMali_Hoghogh" Member="HesabMali" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="HesabMali" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HazineEdari" Member="HazineEdaris">
+    <Type Name="HazineEdari">
+      <Column Name="CodeHazine" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShomareHesab" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="NamHazine" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TarikhPardakht" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="Tozihat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="HesabMali_HazineEdari" Member="HesabMali" ThisKey="ShomareHesab" OtherKey="ShomareHesab" Type="HesabMali" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

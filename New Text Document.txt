@@ -1,0 +1,489 @@
+USE [master]
+GO
+/****** Object:  Database [CarpetCompany]    Script Date: 2023/06/17 20:28:36 ******/
+CREATE DATABASE [CarpetCompany]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'Farsh Co', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Farsh Co.mdf' , SIZE = 73728KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'Farsh Co_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\Farsh Co_log.ldf' , SIZE = 270336KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [CarpetCompany] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [CarpetCompany].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [CarpetCompany] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [CarpetCompany] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [CarpetCompany] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [CarpetCompany] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [CarpetCompany] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET RECOVERY FULL 
+GO
+ALTER DATABASE [CarpetCompany] SET  MULTI_USER 
+GO
+ALTER DATABASE [CarpetCompany] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [CarpetCompany] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [CarpetCompany] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [CarpetCompany] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [CarpetCompany] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [CarpetCompany] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'CarpetCompany', N'ON'
+GO
+ALTER DATABASE [CarpetCompany] SET QUERY_STORE = OFF
+GO
+USE [CarpetCompany]
+GO
+/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[__MigrationHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ContextKey] [nvarchar](300) NOT NULL,
+	[Model] [varbinary](max) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK_dbo.__MigrationHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC,
+	[ContextKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Account]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Account](
+	[FirstName] [nvarchar](max) NOT NULL,
+	[LastName] [nvarchar](max) NOT NULL,
+	[PhoneNumber] [varchar](11) NULL,
+	[UserName] [varchar](20) NOT NULL,
+	[Password] [varchar](30) NOT NULL,
+	[Jobs] [nvarchar](max) NULL,
+	[AccessRate1] [bit] NULL,
+	[AccessRate2] [bit] NULL,
+	[AccessRate3] [bit] NULL,
+	[AccessRate4] [bit] NULL,
+	[AccessRate5] [bit] NULL,
+ CONSTRAINT [PK_Account] PRIMARY KEY CLUSTERED 
+(
+	[UserName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AsnadeDaryafti]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AsnadeDaryafti](
+	[CodeSenad] [varchar](8) NOT NULL,
+	[ShomareHesab] [varchar](19) NOT NULL,
+	[NamHesab] [nvarchar](100) NULL,
+	[DaryaftAz] [nvarchar](100) NULL,
+	[ShomareSenad] [int] NOT NULL,
+	[TarikhSabt] [nvarchar](10) NULL,
+	[TarikhSarResid] [nvarchar](10) NULL,
+	[Price] [decimal](23, 0) NULL,
+	[Tozihat] [nvarchar](max) NULL,
+	[Vaziat] [nvarchar](50) NULL,
+ CONSTRAINT [PK_AsnadeDaryafti] PRIMARY KEY CLUSTERED 
+(
+	[CodeSenad] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AsnadePardakhti]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AsnadePardakhti](
+	[CodeSenad] [varchar](8) NOT NULL,
+	[ShomareHesab] [varchar](19) NOT NULL,
+	[NamHesab] [nvarchar](100) NULL,
+	[PardakhteBe] [nvarchar](100) NULL,
+	[ShomareSenad] [nvarchar](50) NULL,
+	[TarikhSabt] [nvarchar](10) NULL,
+	[TarikhSarResid] [nvarchar](10) NULL,
+	[Price] [decimal](23, 0) NULL,
+	[Tozihat] [nvarchar](max) NULL,
+	[Vaziat] [nvarchar](50) NULL,
+ CONSTRAINT [PK_AsnadePardakhti] PRIMARY KEY CLUSTERED 
+(
+	[CodeSenad] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HazineEdari]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HazineEdari](
+	[CodeHazine] [nvarchar](50) NOT NULL,
+	[ShomareHesab] [varchar](19) NOT NULL,
+	[NamHazine] [nvarchar](100) NOT NULL,
+	[TarikhPardakht] [nvarchar](10) NULL,
+	[price] [decimal](20, 0) NULL,
+	[Tozihat] [nvarchar](max) NULL,
+ CONSTRAINT [PK_AdministrativeCost] PRIMARY KEY CLUSTERED 
+(
+	[CodeHazine] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HesabKol]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HesabKol](
+	[CodeKol] [varchar](15) NOT NULL,
+	[OnvanKol] [nvarchar](200) NOT NULL,
+ CONSTRAINT [PK_HesabKol] PRIMARY KEY CLUSTERED 
+(
+	[CodeKol] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HesabMali]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HesabMali](
+	[ShomareHesab] [varchar](19) NOT NULL,
+	[SahebHesab] [nvarchar](100) NOT NULL,
+	[NamHesab] [nvarchar](100) NOT NULL,
+	[NamBank] [nvarchar](100) NULL,
+	[Tozihat] [nvarchar](max) NULL,
+	[Mojodi] [decimal](30, 0) NOT NULL,
+ CONSTRAINT [PK_HesabMali] PRIMARY KEY CLUSTERED 
+(
+	[ShomareHesab] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HesabMoin]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HesabMoin](
+	[CodeMoin] [varchar](20) NOT NULL,
+	[OnvanMoin] [nvarchar](200) NOT NULL,
+	[CodeKol] [varchar](15) NULL,
+ CONSTRAINT [PK_HesabMoin] PRIMARY KEY CLUSTERED 
+(
+	[CodeMoin] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HesabTafsili]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HesabTafsili](
+	[CodeTafsili] [varchar](25) NOT NULL,
+	[OnvanTafsili] [nvarchar](200) NOT NULL,
+	[CodeMoin] [varchar](20) NULL,
+ CONSTRAINT [PK_HesabTafsili] PRIMARY KEY CLUSTERED 
+(
+	[CodeTafsili] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Hoghogh]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Hoghogh](
+	[CodeHoghogh] [varchar](8) NOT NULL,
+	[ShomareHesab] [varchar](19) NOT NULL,
+	[Nam] [nvarchar](100) NULL,
+	[Tarikh] [nvarchar](10) NULL,
+	[NoaHoghogh] [nvarchar](50) NOT NULL,
+	[price] [decimal](20, 0) NOT NULL,
+	[Tozihat] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Hoghogh] PRIMARY KEY CLUSTERED 
+(
+	[CodeHoghogh] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PardakhtAzHesab]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PardakhtAzHesab](
+	[CodePardakhti] [varchar](8) NOT NULL,
+	[ShomareHesab] [varchar](19) NOT NULL,
+	[NamHesab] [nvarchar](100) NULL,
+	[NamPardakhtKonande] [nvarchar](100) NULL,
+	[TarikhPardakht] [nvarchar](10) NULL,
+	[Price] [decimal](23, 0) NULL,
+	[Tozihat] [nvarchar](max) NULL,
+ CONSTRAINT [PK_PardakhtAzHesab] PRIMARY KEY CLUSTERED 
+(
+	[CodePardakhti] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ProductRegistrations]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ProductRegistrations](
+	[ProductCode] [nvarchar](128) NOT NULL,
+	[ProductName] [nvarchar](max) NULL,
+	[Unit] [nvarchar](max) NULL,
+	[PurchasePrice] [int] NOT NULL,
+	[BarCode] [nvarchar](max) NULL,
+	[SalesPrice] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.ProductRegistrations] PRIMARY KEY CLUSTERED 
+(
+	[ProductCode] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Senad]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Senad](
+	[ShomareSenad] [varchar](50) NOT NULL,
+	[CodeKol] [varchar](15) NOT NULL,
+	[CodeMoein] [varchar](20) NULL,
+	[CodeTafsili] [varchar](25) NULL,
+	[NamHesab] [nvarchar](400) NOT NULL,
+	[SharheSenad] [nvarchar](max) NULL,
+	[TarikhSenad] [nvarchar](10) NULL,
+	[Bedehkar] [decimal](20, 0) NULL,
+	[Bestankar] [decimal](20, 0) NULL,
+ CONSTRAINT [PK_Senads] PRIMARY KEY CLUSTERED 
+(
+	[ShomareSenad] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[VarizBeHesab]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VarizBeHesab](
+	[CodeVariz] [varchar](8) NOT NULL,
+	[ShomareHesab] [varchar](19) NOT NULL,
+	[NamHesab] [nvarchar](100) NULL,
+	[NamVarizKonande] [nvarchar](100) NULL,
+	[TarikhVarizi] [nvarchar](10) NULL,
+	[Price] [decimal](23, 0) NULL,
+	[Tozihat] [nvarchar](max) NULL,
+ CONSTRAINT [PK_VarizBeHesab] PRIMARY KEY CLUSTERED 
+(
+	[CodeVariz] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[ProductRegistrations] ADD  DEFAULT ((0)) FOR [SalesPrice]
+GO
+ALTER TABLE [dbo].[AsnadeDaryafti]  WITH CHECK ADD  CONSTRAINT [FK_AsnadeDaryafti_HesabMali] FOREIGN KEY([ShomareHesab])
+REFERENCES [dbo].[HesabMali] ([ShomareHesab])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[AsnadeDaryafti] CHECK CONSTRAINT [FK_AsnadeDaryafti_HesabMali]
+GO
+ALTER TABLE [dbo].[AsnadePardakhti]  WITH CHECK ADD  CONSTRAINT [FK_AsnadePardakhti_HesabMali] FOREIGN KEY([ShomareHesab])
+REFERENCES [dbo].[HesabMali] ([ShomareHesab])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[AsnadePardakhti] CHECK CONSTRAINT [FK_AsnadePardakhti_HesabMali]
+GO
+ALTER TABLE [dbo].[HazineEdari]  WITH CHECK ADD  CONSTRAINT [FK_HazineEdari_HesabMali] FOREIGN KEY([ShomareHesab])
+REFERENCES [dbo].[HesabMali] ([ShomareHesab])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[HazineEdari] CHECK CONSTRAINT [FK_HazineEdari_HesabMali]
+GO
+ALTER TABLE [dbo].[HesabMoin]  WITH CHECK ADD  CONSTRAINT [FK_HesabMoin_HesabKol] FOREIGN KEY([CodeKol])
+REFERENCES [dbo].[HesabKol] ([CodeKol])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[HesabMoin] CHECK CONSTRAINT [FK_HesabMoin_HesabKol]
+GO
+ALTER TABLE [dbo].[HesabTafsili]  WITH CHECK ADD  CONSTRAINT [FK_HesabTafsili_HesabMoin] FOREIGN KEY([CodeMoin])
+REFERENCES [dbo].[HesabMoin] ([CodeMoin])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[HesabTafsili] CHECK CONSTRAINT [FK_HesabTafsili_HesabMoin]
+GO
+ALTER TABLE [dbo].[Hoghogh]  WITH CHECK ADD  CONSTRAINT [FK_Hoghogh_HesabMali] FOREIGN KEY([ShomareHesab])
+REFERENCES [dbo].[HesabMali] ([ShomareHesab])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Hoghogh] CHECK CONSTRAINT [FK_Hoghogh_HesabMali]
+GO
+ALTER TABLE [dbo].[PardakhtAzHesab]  WITH CHECK ADD  CONSTRAINT [FK_PardakhtAzHesab_HesabMali] FOREIGN KEY([ShomareHesab])
+REFERENCES [dbo].[HesabMali] ([ShomareHesab])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[PardakhtAzHesab] CHECK CONSTRAINT [FK_PardakhtAzHesab_HesabMali]
+GO
+ALTER TABLE [dbo].[Senad]  WITH CHECK ADD  CONSTRAINT [FK_Senads_HesabKol] FOREIGN KEY([CodeKol])
+REFERENCES [dbo].[HesabKol] ([CodeKol])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Senad] CHECK CONSTRAINT [FK_Senads_HesabKol]
+GO
+ALTER TABLE [dbo].[VarizBeHesab]  WITH CHECK ADD  CONSTRAINT [FK_VarizBeHesab_HesabMali] FOREIGN KEY([ShomareHesab])
+REFERENCES [dbo].[HesabMali] ([ShomareHesab])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[VarizBeHesab] CHECK CONSTRAINT [FK_VarizBeHesab_HesabMali]
+GO
+/****** Object:  StoredProcedure [dbo].[DeleteAccount]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[DeleteAccount]
+@userName nvarchar(max)
+as
+delete from Account where UserName = @userName
+GO
+/****** Object:  StoredProcedure [dbo].[InsertAccount]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[InsertAccount]
+@fname nvarchar(max),
+@lname nvarchar(max),
+@phone nvarchar(11),
+@user nvarchar(20),
+@pass varchar(30),
+@job nvarchar(max),
+@AccessRate1 bit,
+@AccessRate2 bit,
+@AccessRate3 bit,
+@AccessRate4 bit,
+@AccessRate5 bit
+as
+insert into Account([FirstName],[LastName],[PhoneNumber],[UserName],[Password],[Jobs],[AccessRate1],[AccessRate2],[AccessRate3],[AccessRate4],[AccessRate5])
+values(@fname,@lname,@phone,@user,@pass,@job,@AccessRate1,@AccessRate2,@AccessRate3,@AccessRate4,@AccessRate5)
+GO
+/****** Object:  StoredProcedure [dbo].[SelectAccount]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[SelectAccount]
+@search nvarchar(max)
+as
+Select * from Account where [FirstName] like '%'+@search+'%' or [LastName] like '%'+@search+'%'
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateAccess]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[UpdateAccess]
+@AccessRate1 bit,
+@AccessRate2 bit,
+@AccessRate3 bit,
+@AccessRate4 bit,
+@AccessRate5 bit,
+@user varchar(20)
+as
+update Account set
+AccessRate1 = @AccessRate1 , AccessRate2 = @AccessRate2 , AccessRate3 = @AccessRate3,
+AccessRate4 = @AccessRate4 , AccessRate5 = @AccessRate5
+where UserName = @user
+GO
+/****** Object:  StoredProcedure [dbo].[UpdateAccount]    Script Date: 2023/06/17 20:28:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[UpdateAccount]
+@fname nvarchar(max),
+@lname nvarchar(max),
+@phone nvarchar(11),
+@user varchar(20),
+@pass nvarchar(30),
+@job nvarchar(max)
+as
+update Account set 
+FirstName = @fname , LastName = @lname , PhoneNumber = @phone , Password = @pass , Jobs = @job
+where UserName = @user
+GO
+USE [master]
+GO
+ALTER DATABASE [CarpetCompany] SET  READ_WRITE 
+GO

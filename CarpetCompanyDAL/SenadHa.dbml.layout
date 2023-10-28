@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SenadHa">
+  <DataContextMoniker Name="/SenadHaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="661693b3-7181-4cf0-8aa4-2ddc53675b98" absoluteBounds="0.75, 0.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/SenadHaDataContext/HesabKol" />
+      <nestedChildShapes>
+        <elementListCompartment Id="288252f5-0fc1-49b1-810b-ddb4e22bf4bb" absoluteBounds="0.76500000000000057, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0cbc7b61-68cf-479a-bad1-1741a499ac49" absoluteBounds="3.875, 0.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SenadHaDataContext/HesabMoin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b48c281-cef1-4092-9899-0385b0c77490" absoluteBounds="3.89, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.47199625651042); (3.875 : 1.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SenadHaDataContext/HesabKol/HesabKol_HesabMoin" />
+      <nodes>
+        <classShapeMoniker Id="661693b3-7181-4cf0-8aa4-2ddc53675b98" />
+        <classShapeMoniker Id="0cbc7b61-68cf-479a-bad1-1741a499ac49" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9fc45ef9-9981-45d4-adbe-982f8af1ef6e" absoluteBounds="6.875, 0.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SenadHaDataContext/HesabTafsili" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e239a1c-de50-401f-ac20-815be985eb0d" absoluteBounds="6.89, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 1.56814697265625); (6.875 : 1.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SenadHaDataContext/HesabMoin/HesabMoin_HesabTafsili" />
+      <nodes>
+        <classShapeMoniker Id="0cbc7b61-68cf-479a-bad1-1741a499ac49" />
+        <classShapeMoniker Id="9fc45ef9-9981-45d4-adbe-982f8af1ef6e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="020f5a43-1d88-486b-8149-54c75424b4d7" absoluteBounds="4.25, 3.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/SenadHaDataContext/Senad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3cfdbfc-9203-4a1d-9835-c3e02620b9aa" absoluteBounds="4.2650000000000006, 4.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 2.06899251302083); (1.75 : 4.89505126953125); (4.25 : 4.89505126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SenadHaDataContext/HesabKol/HesabKol_Senad" />
+      <nodes>
+        <classShapeMoniker Id="661693b3-7181-4cf0-8aa4-2ddc53675b98" />
+        <classShapeMoniker Id="020f5a43-1d88-486b-8149-54c75424b4d7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

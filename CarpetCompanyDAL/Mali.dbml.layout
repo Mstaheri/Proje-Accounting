@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.875, 11.125" name="Mali">
+  <DataContextMoniker Name="/MaliDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c5ab1270-7655-48b9-b3cc-72ec4e6abb22" absoluteBounds="8.625, 5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/MaliDataContext/HesabMali" />
+      <nestedChildShapes>
+        <elementListCompartment Id="21082a7e-387a-4b06-8e73-0211f0c103d7" absoluteBounds="8.64, 5.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84cd1f81-6118-4a49-84e2-02863685b9e9" absoluteBounds="11.125, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/MaliDataContext/AsnadeDaryafti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d679010c-2395-4a69-8157-1d39712d7d1f" absoluteBounds="11.14, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.1718775 : 5); (10.1718775 : 2.58055547851562); (11.125 : 2.58055547851562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MaliDataContext/HesabMali/HesabMali_AsnadeDaryafti" />
+      <nodes>
+        <classShapeMoniker Id="c5ab1270-7655-48b9-b3cc-72ec4e6abb22" />
+        <classShapeMoniker Id="84cd1f81-6118-4a49-84e2-02863685b9e9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="51edd95f-5d5c-4914-a641-7904bd9307dd" absoluteBounds="6.625, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/MaliDataContext/AsnadePardakhti" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed389466-8c92-4e59-b03a-b1a0462d4839" absoluteBounds="6.6400000000000006, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.65625 : 5); (9.65625 : 1.86620198567708); (8.625 : 1.86620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MaliDataContext/HesabMali/HesabMali_AsnadePardakhti" />
+      <nodes>
+        <classShapeMoniker Id="c5ab1270-7655-48b9-b3cc-72ec4e6abb22" />
+        <classShapeMoniker Id="51edd95f-5d5c-4914-a641-7904bd9307dd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="46c746fe-c68c-4e65-8097-3974ce28a4ed" absoluteBounds="4, 4.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/MaliDataContext/PardakhtAzHesab" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ba3c29d-8e0b-4307-8dc3-fc72ffe67a24" absoluteBounds="4.0150000000000006, 5.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.625 : 5.89024983723958); (6 : 5.89024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MaliDataContext/HesabMali/HesabMali_PardakhtAzHesab" />
+      <nodes>
+        <classShapeMoniker Id="c5ab1270-7655-48b9-b3cc-72ec4e6abb22" />
+        <classShapeMoniker Id="46c746fe-c68c-4e65-8097-3974ce28a4ed" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="65c12840-fad0-48e6-b022-c3155a978c74" absoluteBounds="5.375, 8.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/MaliDataContext/VarizBeHesab" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a904113d-6800-44fc-80f9-b4b6af639f3e" absoluteBounds="5.39, 9.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.32031125 : 6.9631982421875); (9.32031125 : 10.2013618977865); (7.375 : 10.2013618977865)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MaliDataContext/HesabMali/HesabMali_VarizBeHesab" />
+      <nodes>
+        <classShapeMoniker Id="c5ab1270-7655-48b9-b3cc-72ec4e6abb22" />
+        <classShapeMoniker Id="65c12840-fad0-48e6-b022-c3155a978c74" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1bbf1db0-a62f-4414-8ebb-ab89f04cf8c7" absoluteBounds="12.625, 4.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/MaliDataContext/Hoghogh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64d04d81-dd96-41c5-a39e-90ef9a14c2c1" absoluteBounds="12.64, 4.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.625 : 5.76524983723958); (12.625 : 5.76524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MaliDataContext/HesabMali/HesabMali_Hoghogh" />
+      <nodes>
+        <classShapeMoniker Id="c5ab1270-7655-48b9-b3cc-72ec4e6abb22" />
+        <classShapeMoniker Id="1bbf1db0-a62f-4414-8ebb-ab89f04cf8c7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cc153c16-ae20-4cee-90f3-31ba28a18826" absoluteBounds="11.5, 8.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/MaliDataContext/HazineEdari" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4dbcd0b8-3edb-48ea-9f10-1bd594bdfaa2" absoluteBounds="11.515, 8.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.0781275 : 6.9631982421875); (10.0781275 : 9.49722412109375); (11.5 : 9.49722412109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MaliDataContext/HesabMali/HesabMali_HazineEdari" />
+      <nodes>
+        <classShapeMoniker Id="c5ab1270-7655-48b9-b3cc-72ec4e6abb22" />
+        <classShapeMoniker Id="cc153c16-ae20-4cee-90f3-31ba28a18826" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
